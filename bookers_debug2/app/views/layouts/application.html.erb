@@ -13,9 +13,8 @@
     <%= render 'layouts/header' %>
       <main>
         <p id="notice"><%= notice %></p>
+        <%= yield %>
       </main>
     <%= render 'layouts/footer' %>
-    
-    <%= yield %>
   </body>
 </html>
