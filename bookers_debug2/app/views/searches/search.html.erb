@@ -1,0 +1,6 @@
+<h2>"<%= @word %>"の検索結果</h2>
+  <% if @subject == "book" %>
+    <%= render "books/index", books: @records %>
+  <% else %>
+    <%= render "users/index", users: @records %>
+  <% end %>
