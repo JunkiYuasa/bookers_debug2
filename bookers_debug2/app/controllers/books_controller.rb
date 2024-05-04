@@ -8,7 +8,20 @@ class BooksController < ApplicationController
   end
 
   def index
-    @books = Book.all
+    if params[:order] == "latest"
+      @books = Book.latest
+      @current_order = "latest"
+    elsif params[:order] == "most_favorited"
+      @books = Book.most_favorited
+      @current_order = "most_favorited"
+    elsif params[:order] == "most_favorited_recent"
+      @books = Book.most_favorited_recent
+      @current_order = "most_favorited_recent"
+      
+    else
+      @books = Book.latest
+      @current_order = "latest"
+    end
     @book = Book.new
   end
 

@@ -1,4 +1,9 @@
 <table class='table table-hover table-inverse'>
+  <%= link_to '新着順', books_path(order: "latest") %>
+  <%= "　" %>
+  <%= link_to 'いいね順', books_path(order: "most_favorited") %>
+  <%= "　" %>
+  <%= link_to "HOT", books_path(order: "most_favorited_recent") %>
   <thead>
     <tr>
       <th></th>
