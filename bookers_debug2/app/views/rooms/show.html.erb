@@ -1,0 +1,22 @@
+<div class="m-4">
+  <% @entries.each do |e| %>
+    <% if e.user.id != current_user.id %>
+      <h2><%= e.user.name %></h2>
+    <% end %>
+  <% end %>
+</div>
+
+<% @messages.each do |m| %>
+  <div class="my-2">
+    <%= m.user.name %>
+    <%= m.message %>
+  </div>
+<% end %>
+
+<%= form_with model: @message do |f| %>
+  <%= f.hidden_field :room_id, value: @room.id %>
+  <%= f.text_area :body, placeholder: "メッセージを入力して下さい" , size: 50, class:"form-text-field"%>
+  <%= f.submit "送信" %>
+<% end %>
+  
+  
